@@ -93,6 +93,14 @@ nav {
     width: 35%;
 }
 
+.iconCollapseAbstract {
+    color: #707070;
+    position: absolute;
+    right: 5%;
+    padding-top: 3px;
+    display: none;
+}
+
 .abstract-title {
     font-size: 20px;
     font-weight: normal;
@@ -185,11 +193,63 @@ hr {
 
 .products-cards {
     width: 100%;
-    height: 100px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    column-gap: 40px;
+    row-gap: 40px;
+}
 
+.product-card {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.product-card img {
+    width: 100%;
+    height: auto;
+    margin-bottom: 10px;
+}
+
+.card-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.card-info h1 {
+    font-size: 14px;
+    margin-bottom: 10px;
+    font-weight: normal;
+}
+
+.card-info p {
+    font-size: 12px;
+    margin-bottom: 12px;
+}
+
+.card-info .product-oldPrice {
+    font-size: 12px;
+    margin-bottom: 10px;
+}
+
+.card-info .product-price {
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.card-info .installments {
+    font-size: 12px;
+    margin-bottom: 12px;
+}
+
+.card-info button {
+    width: 100%;
+    height: 30px;
+    font-size: 16px;
+    background: #fff;
+    border: 1px solid #707070;
+    border-radius: 4px;
 }
 
 .btnProducts {
@@ -199,7 +259,7 @@ hr {
     background: #fff;
     border: 1px solid #707070;
     border-radius: 4px;
-    margin: 18px;
+    margin: 60px;
 }
 
 .btnProducts:hover {

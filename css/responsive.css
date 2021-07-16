@@ -42,7 +42,16 @@
         width: 90%;
     }
 
+    .iconCollapseAbstract {
+        display: inline-block;
+    }
+
     .form-section {
+        width: 90%;
+    }
+
+    .products-cards {
+        grid-template-columns: 1fr 1fr;
         width: 90%;
     }
 
@@ -97,5 +106,27 @@
 
     .headerText p,  .headerText h1, .headerText h2 {
         text-align: left;
+    }
+
+    .products-cards {
+        grid-template-columns: 1fr;
+    }
+
+    .product-card {
+        flex-direction: row;
+    }
+    
+    .product-card img {
+        width: 75%;
+    }
+
+    .card-info {
+        width: 100%;
+        padding-left: 20px;
+    }
+
+    .card-info p {
+        display: none;
+        margin: 0;
     }
 }
