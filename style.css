@@ -5,6 +5,7 @@
     border:0;
     font-family: Helvetica, sans-serif;
     box-sizing: border-box;
+    color: #888888;
 }
 
 Header {
@@ -34,19 +35,22 @@ Header:after {
     padding-top: 70px;
 }
 
-h2 {
+Header h2 {
     font-size: 20px;
     margin-bottom: 8px;
     font-weight: normal;
+    color: #fff;
 }
 
-h1 {
+Header h1 {
     font-size: 40px;
     margin-bottom: 25px;
+    color: #fff;
 }
 
-p {
+Header p {
     font-size: 14px;
+    color: #fff;
 }
 
 nav {
@@ -59,11 +63,14 @@ nav {
     width: 160px;
     height: 40px;
     background: #fff;
-    color: #888888;
     border: 1px solid #707070;
     box-shadow: 0px 1px 6px #00000029;
     border-radius: 4px;
     margin: 18px;
+}
+
+.btnNav:hover {
+    background: #eee;
 }
 
 .container {
@@ -75,13 +82,12 @@ nav {
 .abstract {
     margin: 15px;
     width: 35%;
-    color: #888888
 }
 
 .abstract-title {
-    color: #888888;
     font-size: 20px;
     font-weight: normal;
+    margin-bottom: 25px;
 }
 
 .abstract-text {
@@ -92,7 +98,6 @@ nav {
 .form-section {
     margin: 15px;
     width: 23%;
-    color: #888888;
     display: flex;
 }
 
@@ -111,7 +116,6 @@ form {
     border: 1px solid #707070;
     margin-top: 5px;
     margin-bottom: 20px;
-    color: #888888;
 }
 
 input:focus {
@@ -126,9 +130,151 @@ input:focus {
     width: 100%;
     height: 40px;
     font-size: 16px;
-    color: #888888;
     background: #fff;
     margin-top: 18px;
     border: 1px solid #707070;
     border-radius: 4px;
+}
+
+.btnEnviar:hover {
+    background: #eee;
+}
+
+.products-container, .share-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 80px;
+    padding-right: 20%;
+    padding-left: 20%;
+}
+
+.products-title, .share-title {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 50px;
+}
+
+.products-title h1, .share-title h1 {
+    position: absolute;
+    text-align: center;
+    background: #fff;
+    padding-left: 10px;
+    padding-right: 10px;
+    font-size: 18px;
+}
+
+hr {
+    width: 100%;
+    background: #888888;
+    border: 0.5px solid #888888;
+}
+
+.products-cards {
+    width: 100%;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.btnProducts {
+    width: 260px;
+    height: 40px;
+    font-size: 16px;
+    background: #fff;
+    border: 1px solid #707070;
+    border-radius: 4px;
+    margin: 18px;
+}
+
+.btnProducts:hover {
+    background: #eee;
+}
+
+.share-container p {
+    text-align: center;
+    font-size: 14px;
+    margin-bottom: 30px;
+}
+
+.share-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    text-align: center;
+}
+
+.inputs-container {
+    display: flex; 
+    flex-direction: row;
+    justify-content: space-between;
+    margin-bottom: 30px;
+}
+
+.share-form .btnEnviar{
+    width: 260px;
+}
+
+.name-input, .email-input {
+    text-align: left;
+    font-size: 12px;
+}
+
+.name-input {
+    margin-right: 20px;
+}
+
+.email-input {
+    margin-left: 20px;
+}
+
+.name-input input, .email-input input {
+    margin-top: 7px;
+    width: 340px;
+    height: 30px;
+    padding: 8px;
+    border: 1px solid #707070;
+}
+
+footer {
+    margin-top: 120px;
+    position: relative;
+    width: 100%;
+    height: 200px;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    background: #707070;
+    padding-bottom: 85px;
+}
+
+footer:after {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #707070;
+    content: '';
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    transform-origin: bottom left;
+    transform: skewY(-4deg);
+    z-index: -1;
+}
+
+footer span {
+    color: #fff;
+    font-size: 12px;
+    margin: 3px;
 }
