@@ -1,7 +1,6 @@
 let url = 'https://frontend-intern-challenge-api.iurykrieger.vercel.app/products?page=1'
 const productsCards = document.querySelector('.products-cards-email')
 
-
 function listProducts(product) {
     let card = document.createElement("div")
     card.className = 'product-card'
@@ -54,5 +53,12 @@ function getProducts() {
     })
 }
 
+function getName() {
+    const queryString = window.location.search
+    let [friendsName, email] = queryString.replace('?','').split(':')
+    document.querySelector('#name').innerText += ' '+friendsName
+    console.log('E-mail enviado para '+email)
+}
 
+getName()
 getProducts()
