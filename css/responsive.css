@@ -132,6 +132,16 @@
     }
 }
 
+@media (max-width: 360px) {
+    header {
+        height: 600px;
+    }
+
+    nav {
+        grid-template-columns: 1fr;
+    }
+}
+
 @media (min-width: 850px) {
     .text-invisible {
         display: block;
