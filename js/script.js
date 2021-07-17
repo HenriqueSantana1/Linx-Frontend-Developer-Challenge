@@ -1,4 +1,4 @@
-const abstract = document.getElementsByClassName('abstract-text')
+const abstract = document.querySelector('.abstract-text')
 const btnCollapse = document.querySelector('.iconCollapseAbstract')
 const productsCards = document.querySelector('.products-cards')
 const btnMoreProducts = document.querySelector(".btnProducts")
@@ -12,14 +12,12 @@ let isVisible = true;
 btnCollapse.addEventListener("click", e => {
     e.preventDefault()
     if (isVisible) {
-        abstract[0].classList = 'abstract-text text-invisible'
-        abstract[1].classList = 'abstract-text text-invisible'
+        abstract.classList = 'abstract-text text-invisible'
         btnCollapse.classList = 'iconCollapseAbstract isCollapsed'
         isVisible = false
     }
     else {
-        abstract[0].classList = 'abstract-text'
-        abstract[1].classList = 'abstract-text'
+        abstract.classList = 'abstract-text'
         btnCollapse.classList = 'iconCollapseAbstract'
         isVisible = true;
     }
@@ -93,7 +91,7 @@ btnSend.addEventListener("click", e => {
     let masc = document.querySelector('#masc')
     let fem = document.querySelector('#fem')
     let gen
-    
+
     if (!name.value) {
         alert('Insira seu nome')
         return false;
@@ -155,7 +153,7 @@ function isEmail(email) {
 }
 
 function sendEmail(name, email) {
-    console.log('Nome: '+name+'\nE-mail: '+email)
+    window.open(`email.html?${name}:${email}`, '_blank');
 }
 
 getProducts()

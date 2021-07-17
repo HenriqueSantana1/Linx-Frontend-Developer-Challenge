@@ -415,6 +415,7 @@ footer span {
 }
 
 .footerEmail {
+    margin-top: 20px;
     height: 100px;
     padding-bottom: 20px;
 }
@@ -434,4 +435,53 @@ footer span {
 
 .btnProductsEmail a {
     text-decoration: none;
+}
+
+.products-container-email {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 40px;
+}
+.products-cards-email {
+    width: 70%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 40px;
+}
+
+@media (max-width:595px) {
+    .headerTextEmail {
+        width: 80%;
+        padding-left: 0;
+        padding-right: 0;
+    }
+}
+
+@media (max-width:450px) {
+    .headerEmail {
+        height: 250px;
+    }
+    .btnProductsEmail {
+        width: 80%;
+    }
+}
+
+@media (min-width:1280px) {
+    .headerEmail {
+        height: 250px;
+    }
+
+    .products-cards-email {
+        width: 50%;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        column-gap: 20%;
+    }
+    
+    .footerEmail {
+        height: 150px;
+        padding-bottom: 40px;
+    }
 }
