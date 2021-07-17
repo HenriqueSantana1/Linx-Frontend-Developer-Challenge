@@ -268,6 +268,11 @@ hr {
     background: #fff;
     border: 1px solid #707070;
     border-radius: 4px;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #eee;
 }
 
 .btnProducts {
@@ -278,6 +283,7 @@ hr {
     border: 1px solid #707070;
     border-radius: 4px;
     margin: 60px;
+    cursor: pointer;
 }
 
 .btnProducts:hover {
@@ -364,124 +370,4 @@ footer span {
     color: #fff;
     font-size: 12px;
     margin: 3px;
-}
-
-.headerEmail {
-    display: flex;
-    justify-content: center;
-    height: 200px;
-}
-
-.headerTextEmail {
-    padding-left: 120px;
-    padding-right: 120px;
-    padding-top: 30px;
-    text-align: center;
-}
-
-.headerTextEmail h2 {
-    font-size: 20px;
-    font-weight: normal;
-    margin-bottom: 5px;
-    color: #fff;
-}
-
-.headerTextEmail h1 {
-    font-size: 40px;
-    margin-bottom: 10px;
-    color: #fff;
-}
-
-.headerTextEmail p {
-    font-size: 14px;
-    color: #fff;
-}
-
-.greetings {
-    margin: auto;
-    width: 90%;
-    margin-bottom: 50px;
-}
-
-.greetings h1 {
-    font-size: 20px;
-    font-weight: normal;
-    margin-bottom: 5px;
-}
-
-.greetings p {
-    font-size: 12px;
-    line-height: 1.5;
-}
-
-.footerEmail {
-    margin-top: 20px;
-    height: 100px;
-    padding-bottom: 20px;
-}
-
-.btnProductsEmail {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 380px;
-    height: 40px;
-    font-size: 16px;
-    background: #fff;
-    border: 1px solid #707070;
-    border-radius: 4px;
-    margin: 60px;
-}
-
-.btnProductsEmail a {
-    text-decoration: none;
-}
-
-.products-container-email {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    margin-top: 40px;
-}
-.products-cards-email {
-    width: 70%;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    column-gap: 40px;
-}
-
-@media (max-width:595px) {
-    .headerTextEmail {
-        width: 80%;
-        padding-left: 0;
-        padding-right: 0;
-    }
-}
-
-@media (max-width:450px) {
-    .headerEmail {
-        height: 250px;
-    }
-    .btnProductsEmail {
-        width: 80%;
-    }
-}
-
-@media (min-width:1280px) {
-    .headerEmail {
-        height: 250px;
-    }
-
-    .products-cards-email {
-        width: 50%;
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        column-gap: 20%;
-    }
-    
-    .footerEmail {
-        height: 150px;
-        padding-bottom: 40px;
-    }
 }
