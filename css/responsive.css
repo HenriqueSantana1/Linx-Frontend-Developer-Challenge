@@ -114,6 +114,7 @@
 
     .product-card {
         flex-direction: row;
+        align-items: center;
     }
     
     .product-card img {
@@ -128,5 +129,11 @@
     .card-info p {
         display: none;
         margin: 0;
+    }
+}
+
+@media (min-width: 850px) {
+    .text-invisible {
+        display: block;
     }
 }

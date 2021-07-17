@@ -112,6 +112,14 @@ nav {
     line-height: 1.5;
 }
 
+.isCollapsed {
+    transform: rotate(180deg);
+}
+
+.text-invisible {
+    display: none;
+}
+
 .form-section {
     margin: 15px;
     width: 23%;

@@ -1,6 +1,25 @@
 let url = 'https://frontend-intern-challenge-api.iurykrieger.vercel.app/products?page=1'
+const abstract = document.getElementsByClassName('abstract-text')
+const btnCollapse = document.querySelector('.iconCollapseAbstract')
 const productsCards = document.querySelector('.products-cards')
 const btnMoreProducts = document.querySelector(".btnProducts")
+let isVisible = true;
+
+btnCollapse.addEventListener("click", e => {
+    if (isVisible) {
+        abstract[0].classList = 'abstract-text text-invisible'
+        abstract[1].classList = 'abstract-text text-invisible'
+        btnCollapse.classList = 'iconCollapseAbstract isCollapsed'
+        isVisible = false
+    }
+    else {
+        abstract[0].classList = 'abstract-text'
+        abstract[1].classList = 'abstract-text'
+        btnCollapse.classList = 'iconCollapseAbstract'
+        isVisible = true;
+    }
+
+})
 
 btnMoreProducts.addEventListener("click", e => {
     getProducts()
@@ -58,7 +77,6 @@ function getProducts() {
         listProducts(data.products)
         url = 'https://'+data.nextPage
     })
-
 }
 
 getProducts()
