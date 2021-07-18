@@ -123,7 +123,7 @@ nav {
     transition: opacity 0.75s ease-in-out;
 }
 
-.hide {
+.invisible {
     opacity: 0;
     pointer-events: none;
 }
@@ -132,7 +132,7 @@ nav {
     transform: rotate(180deg);
 }
 
-.text-hide {
+.text-invisible {
     display: none;
 }
 

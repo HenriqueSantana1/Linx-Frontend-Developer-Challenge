@@ -169,7 +169,7 @@
 }
 
 @media (min-width: 851px) {
-    .hide {
+    .invisible {
         opacity: 1;
     }
     .abstract-text.none {

@@ -1,6 +1,20 @@
-let url = 'https://frontend-intern-challenge-api.iurykrieger.vercel.app/products?page=1'
 const productsCards = document.querySelector('.products-cards-email')
 
+// Call the function getProducts to list the first 2 products
+getProducts()
+
+// getProducts() -> get products from API and calls listProducts function for the first 2 products
+function getProducts() {
+    let url = 'https://frontend-intern-challenge-api.iurykrieger.vercel.app/products?page=1'
+    fetch(url)
+    .then((res) => res.json())
+    .then(function(data) {
+        listProducts(data.products[0])
+        listProducts(data.products[1])
+    })
+}
+
+// listProducts() -> Function that receives the products from getProducts() and create cards for each product in '.productsCards' div.
 function listProducts(product) {
     let card = document.createElement("div")
     card.className = 'product-card'
@@ -44,15 +58,7 @@ function listProducts(product) {
     productsCards.appendChild(card)
 }
 
-function getProducts() {
-    fetch(url)
-    .then((resp) => resp.json())
-    .then(function(data) {
-        listProducts(data.products[0])
-        listProducts(data.products[1])
-    })
-}
-
+// gets name and email from url to put on greetings div
 function getName() {
     const queryString = window.location.search
     let [friendsName, email] = queryString.replace('?','').split(':')
@@ -61,4 +67,3 @@ function getName() {
 }
 
 getName()
-getProducts()
