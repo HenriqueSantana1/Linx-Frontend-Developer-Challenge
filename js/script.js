@@ -4,25 +4,13 @@ const productsCards = document.querySelector('.products-cards')
 const btnMoreProducts = document.querySelector(".btnProducts")
 const btnSend = document.querySelector('#btnSend')
 const btnSendFriend = document.querySelector('#btnSendFriend')
+const btnCloseAlertError = document.querySelector('.btnCloseError')
+const btnCloseAlertSuccess = document.querySelector('.btnCloseSuccess')
+const alertError = document.querySelector('.error')
+const alertSuccess = document.querySelector('.success')
 
 let url = 'https://frontend-intern-challenge-api.iurykrieger.vercel.app/products?page=1'
 let isVisible = true;
-
-
-btnCollapse.addEventListener("click", e => {
-    e.preventDefault()
-    if (isVisible) {
-        abstract.classList = 'abstract-text text-invisible'
-        btnCollapse.classList = 'iconCollapseAbstract isCollapsed'
-        isVisible = false
-    }
-    else {
-        abstract.classList = 'abstract-text'
-        btnCollapse.classList = 'iconCollapseAbstract'
-        isVisible = true;
-    }
-
-})
 
 btnMoreProducts.addEventListener("click", e => {
     e.preventDefault()
@@ -93,23 +81,23 @@ btnSend.addEventListener("click", e => {
     let gen
 
     if (!name.value) {
-        alert('Insira seu nome')
+        showAlertError('Erro: Informe seu nome')
         return false;
     }
     else if (!email.value) {
-        alert('Insira seu e-mail')
+        showAlertError('Erro: Informe seu e-mail')
         return false;
     }
     else if (!isEmail(email.value)) {
-        alert('E-mail inválido')
+        showAlertError('Erro: E-mail inválido')
         return false;
     }
     else if (!cpf.value) {
-        alert('Insira seu CPF')
+        showAlertError('Erro: Informe seu CPF')
         return false;
     }
     else if (cpf.value.length < 11) {
-        alert('CPF inválido')
+        showAlertError('Erro: CPF inválido')
         return false;
     }
     
@@ -123,6 +111,7 @@ btnSend.addEventListener("click", e => {
         gen = 'Outro'
     }
 
+    showAlertSuccess('Obrigado pela ajuda!') 
     console.log('Nome: '+name.value+'\nE-mail: '+email.value+'\nCPF: '+cpf.value+'\nGênero: '+gen)
 })
 
@@ -132,18 +121,19 @@ btnSendFriend.addEventListener("click", e => {
     let email = document.querySelector('#femail')
 
     if (!name.value) {
-        alert('Insira seu nome')
+        showAlertError('Erro: Informe o nome')
         return false;
     }
     else if (!email.value) {
-        alert('Insira seu e-mail')
+        showAlertError('Erro: Informe o e-mail')
         return false;
     }
     else if (!isEmail(email.value)) {
-        alert('E-mail inválido')
+        showAlertError('Erro: E-mail inválido')
         return false;
     }
 
+    showAlertSuccess('E-mail enviado!')
     return sendEmail(name.value, email.value)
 })
 
@@ -158,11 +148,72 @@ function sendEmail(name, email) {
 
 getProducts()
 
+btnCollapse.addEventListener("click", e => {
+    e.preventDefault()
+    if (isVisible) {
+        abstract.classList.add('hide')
+        btnCollapse.classList.add('isCollapsed')
+        setTimeout(() => {
+            abstract.classList.add('none')
+        }, 750)
+        isVisible = false
+    }
+    else {
+        abstract.classList.remove('none')
+        setTimeout(() => {
+            abstract.classList.remove('hide')
+        }, 1)
+        btnCollapse.classList.remove('isCollapsed')
 
+        isVisible = true;
+    }
+})
 
+btnCloseAlertError.addEventListener("click", e => {
+    alertError.classList.remove('show')
+    alertError.classList.add('hide')
+    setTimeout(() => {
+        alertError.classList.remove('none')
+    },1300)
+})
 
+btnCloseAlertSuccess.addEventListener("click", e => {
+    alertSuccess.classList.remove('show')
+    alertSuccess.classList.add('hide')
+    setTimeout(() => {
+        alertSuccess.classList.remove('none')
+    },1300)
+})
 
+function showAlertError(msg) {
+    document.querySelector('#msgE').innerText = msg
+    alertError.classList.add('show')
+    alertError.classList.remove('none')
+    alertError.classList.remove('hide')
 
+    setTimeout(() => {
+        alertError.classList.remove('show')
+        alertError.classList.add('hide')
+        setTimeout(() => {
+            alertError.classList.remove('none')
+        },1300)
+    }, 4000);
+}
+
+function showAlertSuccess(msg) {
+    document.querySelector('#msgS').innerText = msg
+    alertSuccess.classList.add('show')
+    alertSuccess.classList.remove('hide')
+    alertSuccess.classList.remove('none')
+
+    setTimeout(() => {
+        alertSuccess.classList.remove('show')
+        alertSuccess.classList.add('hide')
+        setTimeout(() => {
+            alertSuccess.classList.remove('none')
+        },1300)
+    }, 4000);
+}
 
 
 

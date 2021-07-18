@@ -120,13 +120,19 @@ nav {
 .abstract-text {
     font-size: 12px;
     line-height: 1.5;
+    transition: opacity 0.75s ease-in-out;
+}
+
+.hide {
+    opacity: 0;
+    pointer-events: none;
 }
 
 .isCollapsed {
     transform: rotate(180deg);
 }
 
-.text-invisible {
+.text-hide {
     display: none;
 }
 
@@ -371,3 +377,99 @@ footer span {
     font-size: 12px;
     margin: 3px;
 }
+
+.alert {
+    display: flex;
+    align-items: center;
+    padding: 18px 38px;
+    max-width: 60%;
+    position: fixed;
+    right: 0;
+    top: 300px;
+    border-radius: 4px;
+}
+
+.error {
+    background: #922a2a;
+    border-left: 10px solid rgb(85, 15, 15);
+}
+
+.success {
+    background: #1ebb72;
+    border-left: 10px solid #0e693f;
+}
+
+.alert .alert-icon {
+    position: absolute;
+    left: 10px;
+    font-size: 22px;
+}
+
+.alert span {
+    color: #fff;
+}
+
+.alert .msg {
+    padding-right: 20px;
+    padding-left: 10px;
+}
+
+.alert .btnCloseError {
+    display: flex;
+    justify-content: center;
+    padding: 18px 12px;
+    align-items: center;
+    position: absolute;
+    right: 0;
+    background: rgb(85, 15, 15);
+}
+
+.alert .btnCloseSuccess {
+    display: flex;
+    justify-content: center;
+    padding: 19px 12px;
+    align-items: center;
+    position: absolute;
+    right: 0;
+    background: #0e693f;
+}
+
+.alert.show {
+    animation: showAlert 1.3s ease forwards;
+}
+
+@keyframes showAlert {
+    0% {
+        transform: translateX(100%)
+    }
+    40% {
+        transform: translateX(-10%)
+    }
+    80% {
+        transform: translateX(5%)
+    }
+    100% {
+        transform: translateX(-20px)
+    }
+}
+
+.alert.hide {
+    animation: hideAlert 1.3s ease forwards;
+}
+
+.none {
+    display: none;
+}
+
+@keyframes hideAlert {
+    0% {
+        transform: translateX(-20px)
+    }
+    50% {
+        transform: translateX(-10%)
+    }
+    100% {
+        transform: translateX(100%)
+    }
+}
+
